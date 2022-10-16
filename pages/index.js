@@ -25,16 +25,15 @@ export default function Home(props) {
     <div className="main__container">
       <div className="invoice__header">
         <div className="invoice__header-logo">
-          <h3>Invoices</h3>
-          <p>There are total {data.length} invoices</p>
+          
+          <h2>There are total {data.length} invoices</h2>
+          <button className="btn" onClick={handlePrint}>Print this out!</button>
+          <button className="btn" onClick={navigatePage}>Add New</button>
         </div>
-
-        <button className="btn" onClick={navigatePage}>
-          Add New
-        </button>
-        <button className="btn" onClick={handlePrint}>Print this out!</button>
-        {/* <button className="btn" onClick={() => { window.print() }}> Print All</button>
-            //not work with safari */}
+       
+       
+        
+       
       </div>
 
       <div className="invoice__container" ref={componentRef}>{/* // for print ref={componentRef} */}

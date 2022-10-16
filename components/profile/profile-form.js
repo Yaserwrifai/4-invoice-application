@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import classes from './profile-form.module.css';
+import Navbar  from '../../pages/Navbar';
 
 function ProfileForm(props) {
   const oldPasswordRef = useRef();
@@ -33,7 +34,9 @@ function ProfileForm(props) {
       <div className={classes.action}>
         <button>Change Password</button>
       </div>
+      <Navbar />
     </form>
+    
   );
 }
 

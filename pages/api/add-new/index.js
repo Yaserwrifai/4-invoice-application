@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 async function handler(req, res) {
 
   //console.log('handler rocess.env.DB_PASSWORD', process.env.DB_PASSWORD)
-  const client = await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+  const client = await MongoClient.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
   if (req.method === "POST") {
     const invoice = {

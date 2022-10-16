@@ -104,13 +104,13 @@ p {
 
 /* ========== sidebar css ========== */
 .sidebar {
-  width: 120px;
+  width: 90px;
   height: 60vh;
   background: var(--secondary-color) !important;
-  color: rgb(210, 13, 13);
+ 
   position: fixed;
   /* top: 0; */
-  left: 0;
+  left: 5px;
   z-index: 1;
   margin-top: 200px;
   
@@ -503,3 +503,6 @@ nav li a:hover {
   border: 2px gray solid;
   border-radius: 3px;
 }
+
+
+  

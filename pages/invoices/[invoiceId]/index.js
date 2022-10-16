@@ -114,7 +114,7 @@ const InvoiceDetails = (props) => {
             }>
             Mark as Paid
           </button>
-          <button className="btn" onClick={() => {window.print()}}>Print this bill</button> 
+         
         </div>
       </div>
 
@@ -124,7 +124,7 @@ const InvoiceDetails = (props) => {
         <div className="details__box">
           <div>
             <h4>{
-              data.id.substr(0, 6).toUpperCase()
+              data.id
             }</h4>
             <p>{
               data.description

@@ -3,31 +3,15 @@ import Link from 'next/link'
 function Navbar() {
  
   return (
-    <nav >
+    <nav  >
       <ul >
-      <li>
-          <Link href='/MyHome'>
-            <a>Home</a>
-          </Link>
-        </li>
+      
         
         <li>
           <Link href='/'>
-            <a>All Invoices</a>
+            <a>Click here to show All Invoices, you can add new invoice</a>
           </Link>
         </li>
-
-
-        <li>
-          <Link href='/add-new'>
-            <a>add-new</a>
-          </Link>
-        </li>
-
-        
-        
-
-      
           
       </ul>
     </nav>

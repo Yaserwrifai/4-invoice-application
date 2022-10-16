@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Btn from "../login-btn"
+// import Btn from "../login-btn"
 import Layout from "../Layout/Layout";
 const Sidebar = () => {
   return (
@@ -17,6 +17,7 @@ const Sidebar = () => {
         </div>
        
         <h3>#Code Academy#</h3>
+        
         <div className="sidebar__bottom">
           <Image src="/ava.png" alt="avatar" width="50" height="50" />
         </div>
