@@ -4,6 +4,8 @@ import React, { Fragment } from "react";
 import MainNavigation from './main-navigation';
 
 import Sidebar from "../Sidebar/Sidebar";
+import StartingPageContent from "../starting-page/StartingPageContent"
+
 
 
 
@@ -14,6 +16,7 @@ const Layout = (props: { children: string | number | boolean | React.ReactElemen
     <Fragment>
      
       <Sidebar />
+     
       <MainNavigation />
       
       <div>{props.children}</div>

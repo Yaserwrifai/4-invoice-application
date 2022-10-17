@@ -8,7 +8,7 @@ const session = useSession()
   function logoutHandler() {
     
     signOut();
-     router.push("/auth");
+    //  router.push("/auth");
     
   }
 //console.log('session', session)
