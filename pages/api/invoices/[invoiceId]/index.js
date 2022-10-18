@@ -2,9 +2,9 @@ import { MongoClient, ObjectId } from "mongodb";
 
 async function handler(req, res) {
   const { invoiceId } = req.query;
-  console.log('invoiceId', invoiceId)
-  const client = await MongoClient.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-  console.log('client', client)
+  // console.log('invoiceId', invoiceId)
+  const client = await MongoClient.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+  // console.log('client', client)
 
 
   const db = client.db();

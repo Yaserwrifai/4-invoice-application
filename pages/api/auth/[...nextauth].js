@@ -1,9 +1,11 @@
 import NextAuth from 'next-auth';
 // import Providers from 'next-auth/providers';
 import CredentialsProvider from "next-auth/providers/credentials"
-
 import { verifyPassword } from '../../../lib/auth';
 import { connectToDatabase } from '../../../lib/db';
+
+
+
 
 export default NextAuth({
   session: {

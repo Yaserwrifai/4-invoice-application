@@ -24,6 +24,6 @@ const onFormSubmit = async (e) => {
         });
         //Await for data for any desirable next steps
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
     };
 //...

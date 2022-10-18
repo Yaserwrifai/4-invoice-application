@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/router';
-
 import classes from './auth-form.module.css';
 
 async function createUser(email, password) {

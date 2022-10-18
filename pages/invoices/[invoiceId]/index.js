@@ -277,7 +277,7 @@ export async function getStaticProps(context) {
   const db = client.db();
   const collection = db.collection("allInvoices");
   const invoice = await collection.findOne({ _id: ObjectId(invoiceId) });
-  console.log('invoice', invoice)
+  // console.log('invoice', invoice)
   if (invoice)
     return {
 

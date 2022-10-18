@@ -11,7 +11,7 @@ async function register(req, res) {
             return;
         }
         //Connect with database
-        const client = await MongoClient.connect(process.env.MONGODB_URI,
+        const client = await MongoClient.connect(process.env.MONGO_URI,
             { useNewUrlParser: true, useUnifiedTopology: true }
         );
         const db = client.db();

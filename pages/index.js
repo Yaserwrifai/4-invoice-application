@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MongoClient } from "mongodb";
-
-
 import React, { useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+
+export const config={
+  unstable_runtimeJS:false
+}
 
 
 export default function Home(props) {

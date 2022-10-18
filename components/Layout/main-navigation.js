@@ -6,8 +6,10 @@ function MainNavigation() {
 
 const session = useSession()
   function logoutHandler() {
-    
     signOut();
+    <Link href='/auth'></Link>
+   
+    
     //  router.push("/auth");
     
   }
