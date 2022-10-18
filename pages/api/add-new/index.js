@@ -1,10 +1,10 @@
 import { MongoClient } from "mongodb";
-import mongoose from 'mongoose';
+
 
 
 async function handler(req, res) {
 
-  //console.log('handler rocess.env.DB_PASSWORD', process.env.DB_PASSWORD)
+  //console.log('handler process.env.DB_PASSWORD', process.env.DB_PASSWORD)
   const client = await MongoClient.connect(process.env.MONGO_URI, { useNewUrlParser: true });
   
   if (req.method === "POST") {

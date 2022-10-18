@@ -1,29 +1,49 @@
-import { signIn } from 'next-auth/react';
-import handler from './handler';
-//...
-const onFormSubmit = async (e) => {
-        e.preventDefault();
-        //Getting value from useRef()
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
-        //Validation
-        if (!email || !email.includes('@') || !password) {
-            alert('Invalid details');
-            return;
-        }
-        //POST form values
-        const res = await fetch('/api/auth/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: email,
-                password: password,
-            }),
-        });
-        //Await for data for any desirable next steps
-        const data = await res.json();
-        // console.log(data);
-    };
-//...
+import { hashPassword } from '../../../lib/auth';
+import { connectToDatabase } from '../../../lib/db';
+
+async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return;
+  }
+
+  const data = req.body;
+
+  const { email, password } = data;
+
+  if (
+    !email ||
+    !email.includes('@') ||
+    !password ||
+    password.trim().length < 7
+  ) {
+    res.status(422).json({
+      message:
+        'Invalid input - password should also be at least 7 characters long.',
+    });
+    return;
+  }
+
+  const client = await connectToDatabase();
+
+  const db = client.db();
+
+  const existingUser = await db.collection('users').findOne({ email: email });
+
+  if (existingUser) {
+    res.status(422).json({ message: 'User exists already!' });
+    client.close();
+    return;
+  }
+
+  const hashedPassword = await hashPassword(password);
+
+  const result = await db.collection('users').insertOne({
+    email: email,
+    password: hashedPassword,
+  });
+
+  res.status(201).json({ message: 'Created user!' });
+  client.close();
+}
+
+export default handler;
