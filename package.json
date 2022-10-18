@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress open"
   },
   "dependencies": {
     "@next-auth/mongodb-adapter": "^1.1.1",
@@ -27,6 +28,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/mongoose": "^5.11.97",
     "@types/react": "^18.0.21",
+    "cypress": "^10.10.0",
     "encryptjs": "^2.0.0",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.3",
